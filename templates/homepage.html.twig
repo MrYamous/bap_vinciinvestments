@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+   <h1> Mon Contenu</h1>
+
+    {% for article in articles  %}
+        <div>
+            <p>{{ article.title }}</p>
+            <p>{{ article.content }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block title %}
+    Home
+{% endblock %}
+
