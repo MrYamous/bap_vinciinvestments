@@ -62,10 +62,10 @@ class DefaultController extends Controller
     public function article(string $slug)
     {
         $em = $this->getDoctrine()->getManager();
-        $repo = $em->getRepository(Article::class);
+        $article = $em->getRepository(Article::class)->findOneBy(array('slug' => $slug));
 
-        $article = $repo->findAll();
-        $this->render('show.html.twig', [
+
+        return $this->render('show.html.twig', [
             'article' => $article,
         ]);
     }

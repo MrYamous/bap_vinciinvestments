@@ -12,9 +12,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ article.excerpt }}</h5>
                         <p class="card-text">{{ article.content }}</p>
-                        <a href="{{ path('article', {'slug': 'slug-value'}) }}" class="btn btn-primary">
-                            Voir
-                        </a>
+                        <a class="link" href="{{ path('article', {'slug': article.slug}) }}">show event</a>
                     </div>
                 </div>
             </div>
