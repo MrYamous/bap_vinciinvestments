@@ -15,30 +15,43 @@ class DefaultController extends Controller
      */
     public function homepage()
     {
-        /*$em = $this->getDoctrine()->getManager();
-        $i = 0;
-        while ($i < 10000) {
-            $articles = new Article();
-            $articles
-                ->setTitle('yeyeye')
-                ->setSlug('article')
-                ->setContent('COntent lolololo')
-                ->setExcerpt('resume');
-
-            $em->persist($articles);
-            if (0 === $i % 500){
-                $em->flush();
-            }
-            $i++;
-        }*/
+        return $this->render('homepage.html.twig', [
+            'home' => 'home',
+        ]);
+    }
+    /**
+     * @Route("/blog", name="blog")
+     */
+    public function blog()
+    {
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Article::class);
 
         $articles = $repo->findAll();
 
 
-        return $this->render('homepage.html.twig', [
+        return $this->render('blog.html.twig', [
             'articles' => $articles,
+        ]);
+    }
+    /**
+     * @Route("/service", name="service")
+     */
+    public function service()
+    {
+
+        return $this->render('service.html.twig', [
+            'service' => 'services',
+        ]);
+    }
+    /**
+     * @Route("/contact", name="contact")
+     */
+    public function contact()
+    {
+
+        return $this->render('contact.html.twig', [
+            'contact' => 'Contact',
         ]);
     }
 
@@ -48,7 +61,11 @@ class DefaultController extends Controller
      */
     public function article(string $slug)
     {
-        $this->render('article.html.twig', [
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getRepository(Article::class);
+
+        $article = $repo->findAll();
+        $this->render('show.html.twig', [
             'article' => $article,
         ]);
     }
