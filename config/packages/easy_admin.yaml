@@ -1,21 +1,47 @@
 easy_admin:
-    site_name: 'Vinci Investments Blog'
+    site_name: '<img src="https://image.noelshack.com/fichiers/2018/20/4/1526560558-logovi.png"/>'
     entities:
         # List the entity class name you want to manage
 
         User:
             class: App\Entity\User
-            form:
+            label: 'Utilisateurs'
+            list:
+                title: "Liste des administrateurs"
                 fields:
-                    - { property: 'username' }
+                    - { property: 'username', label: 'Nom' }
+                    - { property: 'email', label: 'E-mail' }
+            form:
+                title: 'Modifier le compte'
+                fields:
+                    - { property: 'username', label: 'Nom' }
                     - { property: 'email', type: 'email', label: 'E-mail' }
-                    - { property: 'plainPassword', type: 'password', label: 'Password' }
+                    - { property: 'plainPassword', type: 'password', label: 'Mot de passe' }
                     - { property: 'isActive', type: 'checkbox', label: 'Active ?' }
             new:
                 fields:
                     - { property: 'plainPassword', type_options: { required: true }}
         Article:
             class: App\Entity\Article
+            label: 'Articles'
+            list:
+                title: "Articles du blog"
+                fields:
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'createdAt', label: 'Date de création' }
+            form:
+              title: 'Modifier le contenu'
+              fields:
+                  - { property: 'title', label: 'Titre' }
+                  - { property: 'content', label: 'Contenu' }
+                  - { property: 'excerpt', label: 'Résumé' }
+                  - { property: 'createdAt', label: 'Date de création' }
+                  - { property: 'updatedAt', label: 'Dernière mise à jour' }
+
+
+
 
     design:
-        brand_color: '#670000'
+        brand_color: '#acb3b6'
+        assets:
+                    favicon: 'https://image.noelshack.com/fichiers/2018/20/4/1526561943-white16.png'

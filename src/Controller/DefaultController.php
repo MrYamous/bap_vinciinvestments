@@ -58,15 +58,16 @@ class DefaultController extends Controller
     /**
      * @Route ("/article/{slug}", name="article")
      * @param string $slug
+     * @return Response
      */
     public function article(string $slug)
     {
         $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository(Article::class)->findOneBy(array('slug' => $slug));
+        $repo = $em->getRepository(Article::class);
 
-
+        $articles = $repo->findOneBy(array('slug' => $slug));
         return $this->render('show.html.twig', [
-            'article' => $article,
+            'article' => $articles,
         ]);
     }
 
