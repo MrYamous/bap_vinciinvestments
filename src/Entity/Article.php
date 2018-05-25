@@ -47,6 +47,13 @@ class Article
     private $excerpt;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="text", length=255, nullable=true)
+     */
+    private $youtube;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(type="datetime")
@@ -191,6 +198,26 @@ class Article
     public function setUpdatedAt(\DateTime $updatedAt)
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getYoutube():? string
+    {
+        return $this->youtube;
+    }
+
+    /**
+     * @param string $youtube
+     *
+     * @return Article
+     */
+    public function setYoutube(string $youtube): self
+    {
+        $this->youtube = $youtube;
 
         return $this;
     }

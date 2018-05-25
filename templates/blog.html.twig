@@ -11,7 +11,10 @@
                     <h5 class="card-header">{{ article.title }}</h5>
                     <div class="card-body">
                         <h5 class="card-title">{{ article.excerpt }}</h5>
-                        <p class="card-text">{{ article.content }}</p>
+                        {% if article.youtube is defined and article.youtube != '' %}
+                            <iframe width="560" height="315" src="{{ article.youtube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        {% endif %}
+                        <p class="card-text">{{ article.content|raw }}</p>
                         <a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary">Voir</a>
                     </div>
                 </div>
