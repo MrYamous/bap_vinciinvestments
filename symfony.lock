@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -65,6 +68,9 @@
             "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
     },
+    "gedmo/doctrine-extensions": {
+        "version": "v2.4.35"
+    },
     "javiereguiluz/easyadmin-bundle": {
         "version": "1.17",
         "recipe": {
@@ -111,6 +117,15 @@
             "branch": "master",
             "version": "4.0",
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
+        }
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
         }
     },
     "symfony/asset": {
@@ -312,6 +327,15 @@
             "branch": "master",
             "version": "3.3",
             "ref": "c72d107d077f1654428edaed69415d0228c1aefe"
+        }
+    },
+    "symfony/webpack-encore-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "0e8ef1deeaef761e1defbec0be694237660ab13a"
         }
     },
     "symfony/yaml": {

@@ -1,8 +1,14 @@
 easy_admin:
     site_name: '<img src="https://image.noelshack.com/fichiers/2018/20/4/1526560558-logovi.png"/>'
+    design:
+            brand_color: '#acb3b6'
+            assets:
+                favicon: 'https://image.noelshack.com/fichiers/2018/20/4/1526561943-white16.png'
+                js:
+                    - '/assets/ckeditor/ckeditor.js'
+                    - '/build/js/admin.js'
     entities:
         # List the entity class name you want to manage
-
         User:
             class: App\Entity\User
             label: 'Utilisateurs'
@@ -30,18 +36,10 @@ easy_admin:
                     - { property: 'title', label: 'Titre' }
                     - { property: 'createdAt', label: 'Date de création' }
             form:
-              title: 'Modifier le contenu'
-              fields:
-                  - { property: 'title', label: 'Titre' }
-                  - { property: 'content', label: 'Contenu' }
-                  - { property: 'excerpt', label: 'Résumé' }
-                  - { property: 'createdAt', label: 'Date de création' }
-                  - { property: 'updatedAt', label: 'Dernière mise à jour' }
-
-
-
-
-    design:
-        brand_color: '#acb3b6'
-        assets:
-                    favicon: 'https://image.noelshack.com/fichiers/2018/20/4/1526561943-white16.png'
+                title: 'Modifier le contenu'
+                fields:
+                    - { property: 'title', label: 'Titre' }
+                    - { property: 'content', label: 'Contenu', css_class: 'ckeditor', type: 'textarea' }
+                    - { property: 'excerpt', label: 'Résumé' }
+                    - { property: 'createdAt', label: 'Date de création' }
+                    - { property: 'updatedAt', label: 'Dernière mise à jour' }

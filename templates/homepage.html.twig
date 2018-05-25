@@ -1,10 +1,60 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1>Bienvenue</h1>
-{% endblock %}
+{% block content %}
+    <h1 style="text-align: center;padding: 1em;">Qui sommes-nous ?</h1>
+    <div class="d-flex justify-content-between bd-highlight mb-3" style="padding-bottom: 4em">
+        <div class="d-flex justify-content-around">Dépassement de soi</div>
+        <div class="d-flex justify-content-around">Rigueur</div>
+        <div class="d-flex justify-content-around">Esprit d’équipe</div>
+    </div>
 
+
+    <section class="row">
+        <div class="col-md-4" style="left: -8em; float: left;">
+            <tr>
+                <li>Juin 2017</li>
+                <li>80 membres</li>
+                <li>3 écoles</li>
+            </tr>
+        </div>
+        <div class="col-md-8" style="text-align: justify; float: right;">
+            <p>
+                Son objectif principal est de faire découvrir la finance aux étudiants. Nous leur permettons
+                ainsi, à travers des formations, de passer de la théorie à la pratique dans
+                un environnement qui se rapproche le plus possible des banques d’affaires.
+                Chez Vinci Investments, nous défendons une identité forte par le partage de valeurs
+                communes : la rigueur dans le travail, l’esprit d’équipe et le dépassement de soi.
+            </p>
+        </div>
+    </section>
+
+    <img src="../public/assets/img/HOMEPAGE/membres-vinci-investments.jpg" class="team" alt="responsive image" />
+    <h1 style="text-align: center">Nos atouts</h1>
+    <div class="nos-ecoles">
+        <img class="logo-ecoles"src="../public/assets/img/HOMEPAGE/logo-esilv.png">
+        <img class="logo-ecoles"src="../public/assets/img/HOMEPAGE/logo-iim.png">
+        <img class="logo-ecoles"src="../public/assets/img/HOMEPAGE/logo-emlv.png">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p style="text-align: right">4600</br>étudiants</p></div>
+        <div class="col-md-4"><p style="text-align: center">3</br>Écoles</p></div>
+        <div class="col-md-4"><p style="text-align: left">92400</br>La défense <span class="glyphicon glyphicon-search" style="font-size: 16px"></span></p></div>
+    </div>
+    <section class="row">
+        <div class="col-md-4 " style="background-color: aqua;float: left"></div>
+        <div class="col-md-8"><p>
+                Vinci Investments regroupe des étudiants de l’ESILV (Ecole Supérieure
+                d’Ingénieurs Léonard de Vinci), de l’EMLV (Ecole de Management
+                Léonard de Vinci) et de l’IIM (Institut de l’Internet et du Multimédia).
+                Cela permet de travailler avec des profils variés et des points de
+                vus différents du monde de la finance, panel de compétences large.
+            </p></div>
+
+    </section>
+{% endblock %}
 {% block title %}
     Home
 {% endblock %}
+
 

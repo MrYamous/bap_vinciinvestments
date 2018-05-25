@@ -66,6 +66,7 @@ class SecurityController extends Controller
             'last_username' => $lastUsername,
             'error' => $error,
             'loginForm' => $loginForm->createView(),
+            'bodyClass' => 'login',
         ));
     }
 }

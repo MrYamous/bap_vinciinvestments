@@ -1,0 +1,20 @@
+/* HOMEPAGE */
+div.d-flex.center.justify-content.bd-highlight{
+    justify-content: space-around;
+}
+
+img.team{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+div.nos-ecoles{
+    display: flex;
+    justify-content:center;
+}
+.logo-ecoles{
+    justify-content: space-between;
+    padding: 10px;
+}

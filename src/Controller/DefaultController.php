@@ -54,9 +54,19 @@ class DefaultController extends Controller
             'contact' => 'Contact',
         ]);
     }
+    /**
+     * @Route("/team", name="team")
+     */
+    public function team()
+    {
+
+        return $this->render('team.html.twig', [
+            'team' => 'Team',
+        ]);
+    }
 
     /**
-     * @Route ("/article/{slug}", name="article")
+     * @Route ("/blog/{slug}", name="article")
      * @param string $slug
      * @return Response
      */

@@ -5,59 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}Tryhard{% endblock %}</title>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
-              integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
-              crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
     {% endblock %}
 </head>
-<body>
+<body{% if bodyClass is defined %} class="{{ bodyClass }}"{% endif %}>
 {% block main %}
-    <header style="margin-bottom: 30px;">
+    <header>
         {% block header %}
             {% block navbar %}
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="{{ path('homepage') }}">VI</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">Vinci investment</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ path('homepage') }}">Accueil<span
+                                            class="sr-only">(current)</span></a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('service') }}">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ path('blog') }}">Blog</a>
+                                <a class="nav-link" href="{{ path('team') }}">Équipe</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('contact') }}">Contact</a>
                             </li>
-
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="{{ path('blog') }}">Blog</a>
+                            </li>
                         </ul>
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                     </div>
                 </nav>
             {% endblock %}
         {% endblock %}
     </header>
-    <main class="container">
-        {% block body %}
+    <div id="topcontent">
+        {% block topcontent %}
+            <div id="backgroundpicture" class="header-parallax">
+                <div class="containerofmaintext">
+                    <div class="main_text">
+                        <h1>{% block maintext %}{% endblock %}</h1>
+                    </div>
+                </div>
+                <div class="row" style="
+                position: absolute;
+                background-color: palevioletred;
+                bottom: 0;
+                width: 100%;
+                left: 15px;
+                height: 60px;
+            ">
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/iim.png" alt=""/>
+                    </div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/emlv.png" alt=""/>
+                    </div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/esilv.png" alt=""/>
+                    </div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/devinci-partners.png"
+                                          alt=""/></div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/leonard-de-vinci.png"
+                                          alt=""/></div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/tedx.png" alt=""/>
+                    </div>
+                    <div class="col"><img class="img-partenaire" src="img/logo_vi/pole-leonard-de-vinci.png" alt=""/>
+                    </div>
+                    <div class="col"><img class="img-partenaire" src="../public/assets/img/logo_vi/poletech.png"
+                                          alt=""/></div>
+                </div>
+            </div>
         {% endblock %}
-    </main>
-    <footer>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+    <div id="footer">
         {% block footer %}
-            <p>&copy; 2018 &And;</p>
+            &copy; Copyright 2009 by <a href="#">you</a>.
         {% endblock %}
-    </footer>
-{% endblock %}
+    </div>
+
 {% block javascripts %}
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"
-            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-            crossorigin="anonymous"></script>
+    <script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}
 {% endblock %}
 </body>
 </html>
