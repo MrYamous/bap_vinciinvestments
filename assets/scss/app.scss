@@ -4,3 +4,59 @@
 body.login {
   color: yellow;
 }
+div.d-flex.center.justify-content.bd-highlight{
+  justify-content: space-around;
+}
+
+img.team{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+div.nos-ecoles{
+  display: flex;
+  justify-content:center;
+}
+.logo-ecoles{
+  justify-content: space-between;
+  padding: 10px;
+}
+.containerofmaintext{
+  margin: auto;
+  padding-bottom: 60px;
+}
+/* partenaires */
+.img-partenaire{
+  max-height: 50px;
+  height:auto;
+  max-width:150px;
+  text-align: center;
+}
+
+
+
+/* La ou on va mettre les logos patenaire */
+div.col{
+  text-align: center;
+  margin: auto;
+}
+
+
+/*Texte sur photo sur toutes les pages*/
+.main_text h1{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 72px ;
+  text-align: center;
+  color: darkcyan;
+}
+
+.valeurs{
+  text-align: center;
+}
+
+.content{
+  max-width: 1000px;
+
+}

@@ -40,8 +40,8 @@ easy_admin:
                 fields:
                     - { property: 'title', label: 'Titre' }
                     - { property: 'slug', label: 'Limace' }
-                    - { property: 'youtube', label: 'Youtube URL (eg. https://www.youtube.com/embed/nCkpzqqog4k)', type: 'text' }
+                    - { property: 'youtube', label: 'Youtube URL', type: 'text' }
                     - { property: 'content', label: 'Contenu', css_class: 'ckeditor', type: 'textarea' }
-                    - { property: 'excerpt', label: 'Résumé' }
+                    - { property: 'excerpt', label: 'Résumé', type: 'text' }
                     - { property: 'createdAt', label: 'Date de création' }
                     - { property: 'updatedAt', label: 'Dernière mise à jour' }

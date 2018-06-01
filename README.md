@@ -14,6 +14,11 @@ yarn install
 
 > Or `npm install`
 
+```bash
+php bin/console doctrine:schema:update --dump-sql --force
+```
+
+
 ## Dev
 
 Start webpack (don't mind how it works ^^).
@@ -35,3 +40,5 @@ php bin/console server:run
 ```bash
 bin/console server:start
 ```
+
+> Use now assets/scss/app.scss to modify style
