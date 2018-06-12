@@ -45,3 +45,16 @@ easy_admin:
                     - { property: 'excerpt', label: 'Résumé', type: 'text' }
                     - { property: 'createdAt', label: 'Date de création' }
                     - { property: 'updatedAt', label: 'Dernière mise à jour' }
+        Comment:
+            class: App\Entity\Comment
+            label: 'Commentaires'
+            list:
+                title: "Commentaires d'Articles"
+                fields:
+                    - { property: 'comment', label: 'Contenu du commentaire' }
+                    - { property: 'created', label: 'Date de publication' }
+            form:
+                title: 'Modifier un commentaire'
+                fields:
+                    - { property: 'comment', label: 'Contenu du commentaire', css_class: 'ckeditor', type: 'textarea' }
+                    - { property: 'created', label: 'Date de publication' }

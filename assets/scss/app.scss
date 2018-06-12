@@ -1,62 +1,525 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
-body.login {
-  color: yellow;
+
+
+/* Media quesries des partenaires sur le layout*/
+/*
+@media (max-width: 1110px) {
+#one,#two,#three {
+    display:none;
 }
-div.d-flex.center.justify-content.bd-highlight{
+
+*/
+/* FIN DES MEDIAS QUERIES */
+
+
+/* *** *** CSS DU LAYOUT *** *** */
+#backgroundpicture{
+  background-image: url("../../public/img/picture_homepage_one.jpg");
+  background-position: 100% 0;
+  height: 650px;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.containerofmaintext {
+  margin: auto;
+  padding-bottom: 60px;
+  color: #080808;
+}
+
+img:hover {
+  text-decoration: none;
+  background-color: #333333;
+}
+
+#logo{
+  max-height:50px;
+  height:100%;
+  max-width: 50px;
+}
+
+
+/* COULEURS PRINCIPALES de background hexa
+couleur de background : #333333
+div background contact : #666666
+
+*/
+
+/*NAVBAR PARTENAIRES*/
+@media (max-width: 123px) { /* Remplacez 123px par la taille de votre choix */
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-collapse.collapse {
+    display: none!important;
+  }
+  .navbar-nav {
+    float: none!important;
+    margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+    float: none;
+  }
+  .navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .navbar-text {
+    float: none;
+    margin: 15px 0;
+  }
+  /* cette classe est à ajouter lorsque que vous utilisez une version de Bootstap supérieure ou égale à la 3.1.0 */
+  .navbar-collapse.collapse.in {
+    display: block!important;
+  }
+  .collapsing {
+    overflow: hidden!important;
+  }
+}
+.navpartenaires {
+  position: absolute;
+  background-color: black;
+  opacity: 0.77;
+  bottom: 0;
+  width: 100%;
+  left: 15px;
+  height: 60px;
+}
+
+/* partenaires */
+.img-partenaire {
+  max-height: 50px;
+  height: auto;
+  max-width: 150px;
+  text-align: center;
+}
+
+/* La ou on va mettre les logos patenaire */
+div.col {
+  text-align: center;
+  margin: auto;
+}
+
+/*Texte sur photo sur toutes les pages*/
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 72px;
+  text-align: center;
+  padding: 1em;
+}
+
+.valeurs {
+  text-align: center;
+}
+
+.content {
+  max-width: 1000px;
+}
+
+/* *** *** FIN DU CSS DE LAYOUT *** *** */
+
+/* HOMEPAGE LARGE SCREEN */
+
+.background-homepage {
+  background-color: #333333;
+  overflow: initial;
+  height: 100%;
+}
+
+#homepage-title {
+  font-family: "Arial Black", sans-serif;
+  color: white;
+}
+
+.justify-text{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: justify;
+}
+.logo-pulv{
+  float: right;
+  margin: 0 auto;
+}
+.abilities {
+  color: #cc9933;
+}
+
+.skills {
+  margin-left: 20px;
+}
+
+div.d-flex.center.justify-content.bd-highlight {
   justify-content: space-around;
 }
 
-img.team{
+.img-fluid {
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
   display: table-cell;
-  vertical-align: middle;
 }
-div.nos-ecoles{
+#triangle {
+  padding-left: 0;
+  width: 150px;
+  height: 150px;
+  border-top: 180px solid transparent;
+  border-bottom: 180px solid transparent;
+  border-left: 300px solid blue;
+}
+div.nos-ecoles {
   display: flex;
-  justify-content:center;
-}
-.logo-ecoles{
   justify-content: space-between;
+  margin: 0 auto;
+}
+
+.logo-ecoles {
+  justify-content: space-around;
   padding: 10px;
+  width: 130px;
+  height: 130px;
 }
-.containerofmaintext{
-  margin: auto;
-  padding-bottom: 60px;
+
+.input-contact {
+  width: 45%;
+  background: transparent;
+  border-bottom: brown;
 }
-/* partenaires */
-.img-partenaire{
-  max-height: 50px;
-  height:auto;
-  max-width:150px;
+
+/*Fin de homepage LARGE SCREEN*/
+
+/* Section contact */
+.content-header {
+  font-family: 'Oleo Script', cursive;
+  color: #fcc500;
+  font-size: 45px;
+}
+
+.section-content {
+  text-align: center;
+
+}
+.references{
+  text-align: justify-all;
+  font-family: "Arial",sans-serif;
+  font-size: 2.5em;
+  line-height: 0.1;
+}
+.references-main{
+  font-size: 1.5em
+}
+#contact {
+
+  font-family: 'Teko', sans-serif;
+  padding-top: 60px;
+  width: 100%;
+  height: 550px;
+  background: #3a6186; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #3a6186, #89253e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #3a6186, #89253e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+.subject{
+  max-width: 550px;
+  width: 100%;
+  max-height: 157px;
+  height: 100%;
+  font-size: 1.5em;
+  background: transparent;
+  background-image: none;
+  border-color: white;
+  border-style: solid;
+  border-width: medium;
+  outline: none;
+}
+
+.contact-section {
+  padding-top: 40px;
+}
+
+.contact-section .col-md-6 {
+  width: 50%;
+}
+
+.form-line {
+  border-right: 1px solid #B29999;
+}
+
+.form-group {
+  margin-top: 10px;
+}
+
+label {
+  font-size: 1.3em;
+  line-height: 1em;
+  font-weight: normal;
+}
+
+.form-control {
+  font-size: 1.3em;
+  color: #080808;
+}
+
+textarea.form-control {
+  height: 135px;
+  /* margin-top: px;*/
+}
+
+.submit {
+  font-size: 1.1em;
+  float: right;
+  width: 150px;
+  background-color: transparent;
+  color: #fff;
+
+}
+
+/* PAGE DE MEMBRE / EQUIPE */
+
+#background-contact {
+  background-color: #333333;
+}
+
+.typo-contact {
+  color: white;
+
+}
+
+.equipe {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.equipe:hover {
+  background-color: #333333;
+  opacity: 0.6;
+}
+
+.img-team span {
+  position: absolute;
+}
+
+.img-team:hover span {
+  left: auto;
+  margin-left: auto;
+
+}
+
+.title-recherche {
+  float: left;
+
+}
+
+.asset {
+  color: #cccccc;
+}
+
+.typo-contact {
+  text-align: center;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 3em;
+  margin-top: 0;
+}
+
+/* PAGE CONTACT */
+
+#homepage-background {
+  background-color: #333333;
+  padding-bottom: 5em;
+}
+
+.contact-typo {
+  text-align: center;
+  padding: 1.5em 0 1.5em 0;
+  margin-top: 0;
+  font-family: "Arial Black", sans-serif;
+  color: whitesmoke;
+  font-size: 3em;
+}
+
+.icons {
+  font-size: 4em;
+  color: #ffcc33;
   text-align: center;
 }
 
-
-
-/* La ou on va mettre les logos patenaire */
-div.col{
-  text-align: center;
-  margin: auto;
+.contact-info-typo {
+  padding-top: 2em;
+  font-family: "Arial ", sans-serif;
+  font-size: 0.5em;
+  color: white;
 }
 
-
-/*Texte sur photo sur toutes les pages*/
-.main_text h1{
-  font-family: 'Open Sans', sans-serif;
-  font-size: 72px ;
-  text-align: center;
-  color: darkcyan;
+div.container.contact-cont {
+  display: flex;
+  align-items: center;
+  background-color: #666666;
+  height: 350px;
+}
+::placeholder{
+  color:#999999;
+  font-family: "Arial Rounded MT Bold",sans-serif;
+  text-indent:5px;
+}
+#left-side-contact {
+  float: left;
+  background-color: #666666;
 }
 
-.valeurs{
-  text-align: center;
+#right-side-contact {
+  float: right;
+  background-color: #89253e;
+  height: 100%;
 }
 
-.content{
-  max-width: 1000px;
+.forme {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background: transparent;
+  background-image: none;
+  border-style: none;
+  border-color: white;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+  outline: none;
+}
 
+.forme-right {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background: transparent;
+  background-image: none;
+  border-style: solid;
+  border-width: medium;
+  border-color: white;
+  outline: none;
+}
+
+/*FIN PAGE CONTACT*/
+
+/* PAGE TEAM */
+.cont-services {
+  background-color: #666666;
+
+}
+
+.left-background-team {
+  background-color: #666666;
+  padding: 20px 0 20px 0;
+}
+
+.right-background-team {
+  clear: left;
+  background-color: #666666;
+  padding: 20px 0 20px 0;
+  float: right;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.services {
+
+  margin: auto 0;
+}
+
+.left-typo {
+  font-family: "Arial Black", Helvetica, sans-serif;
+  font-size: 2em;
+  color: white;
+  /* color:#999999; */
+}
+
+.right-typo {
+  margin-top: 10px;
+  font-family: "Arial Black", Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: right;
+  color: white;
+}
+
+/* ROW ROW FLEX*/
+.right-row-content {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/*FIN DE ROW FLEX*/
+
+/*BACKGROUND COLOR COTE GAUCHE & DROIT */
+.left-container {
+  background-color: #666666;
+  padding: 20px 0 20px 0;
+}
+
+.right-container {
+  background-color: #666666;
+  padding: 20px 0 20px 0;
+}
+
+/*FIN DE BACKGROUND COLOR COTE GAUCHE & DROIT */
+
+.left-text-content {
+  color: white;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 1em;
+  float: right;
+  text-align: left;
+}
+
+.right-text-content {
+  color: white;
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 1em;
+  float: right;
+  text-align: right;
+}
+
+/*FIN DE PAGE TEAM*/
+
+/* FOOTER */
+#footer{
+  margin-top: 4em;
+  background-color: #666666;
+}
+
+.footer-logo{
+  height: 50px;
+  width: auto;
+  padding-left: 15px;
+}
+
+#footer-cont{
+  margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
 }

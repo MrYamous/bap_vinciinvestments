@@ -4,9 +4,12 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use App\Form\CommentFormType;
+use App\Entity\Comment;
 
 class DefaultController extends Controller
 {
@@ -67,17 +70,40 @@ class DefaultController extends Controller
 
     /**
      * @Route ("/blog/{slug}", name="article")
+     * @param Request $request
      * @param string $slug
      * @return Response
      */
-    public function article(string $slug)
+    public function article(Request $request, $slug)
     {
+        $commentForm = $this->createForm(CommentFormType::class);
+        $commentForm->handleRequest($request);
+
+        if ($commentForm->isSubmitted() && $commentForm->isValid()) {
+            $comment = $commentForm->getData();
+
+            // ... perform some action, such as saving the task to the database
+            // for example, if Task is a Doctrine entity, save it!
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+
+
+
+        }
+
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Article::class);
-
         $articles = $repo->findOneBy(array('slug' => $slug));
+        $com = $em->getRepository(Comment::class);
+        $comments = $com->findAll();
+
+
+
         return $this->render('show.html.twig', [
+            'commentForm' => $commentForm->createView(),
             'article' => $articles,
+            'comments' => $comments,
         ]);
     }
 

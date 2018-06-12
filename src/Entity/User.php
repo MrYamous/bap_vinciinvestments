@@ -3,14 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\EntityListeners({"App\Listener\Entity\UserListener"})
  * @ORM\Table(name="app_user")
  */
-class User implements AdvancedUserInterface, \Serializable
+class User implements UserInterface
 {
     /**
      * @var int|null
@@ -46,33 +46,6 @@ class User implements AdvancedUserInterface, \Serializable
      * @var string|null
      */
     private $plainPassword;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(type="array")
-     */
-    private $roles; // on remplace type="json_array" par "array" sur windows
-
-    /**
-     * @var boolean
-     *
-     * @ORM\Column(type="boolean")
-     */
-    private $active;
-
-
-    const ROLE_DEFAULT     = 'ROLE_USER';
-    const ROLE_ADMIN       = 'ROLE_ADMIN';
-    const ROLE_SUPER_ADMIN = 'ROLE_SUPER_ADMIN';
-
-
-    public function __construct()
-    {
-        $this->active = true;
-        $this->roles  = [];
-    }
-
     /**
      * @return int|null
      */
@@ -164,143 +137,11 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * {@inheritdoc}
      */
-    public function getRoles(): array
+    public function getRoles()
     {
-        $roles   = $this->roles;
-        $roles[] = static::ROLE_DEFAULT;
-
-        return array_unique($this->roles);
+        return ['ROLE_ADMIN'];
     }
 
-    /**
-     * @param string $role
-     *
-     * @return bool
-     */
-    public function hasRole(string $role)
-    {
-        return in_array(mb_strtoupper($role), $this->getRoles(), true);
-    }
-
-    /**
-     * @param string $role
-     *
-     * @return User
-     */
-    public function removeRole(string $role): User
-    {
-        if (false !== $key = array_search(mb_strtoupper($role), $this->roles, true)) {
-            unset($this->roles[$key]);
-            $this->roles = array_values($this->roles);
-        }
-
-        return $this;
-    }
-
-    /**
-     * @param array $roles
-     *
-     * @return User
-     */
-    public function setRoles(array $roles): User
-    {
-        $this->roles = array_map(
-            function ($role) {
-                return mb_strtoupper($role);
-            },
-            array_unique($roles)
-        );
-
-        return $this;
-    }
-
-    /**
-     * @param string $role
-     *
-     * @return User
-     */
-    public function addRole(string $role): User
-    {
-        $role = mb_strtoupper($role);
-
-        if ($role === static::ROLE_DEFAULT) {
-            return $this;
-        }
-
-        if (!in_array($role, $this->roles, true)) {
-            $this->roles[] = $role;
-        }
-
-        return $this;
-    }
-
-    /**
-     * @see User::getActive()
-     */
-    public function isActive(): bool
-    {
-        return $this->active;
-    }
-
-    /**
-     * @return bool
-     */
-    public function getActive(): bool
-    {
-        return $this->active;
-    }
-
-    /**
-     * @param bool $active
-     *
-     * @return User
-     */
-    public function setActive(bool $active)
-    {
-        $this->active = $active;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isAccountNonExpired(): bool
-    {
-        return true;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isAccountNonLocked(): bool
-    {
-        return true;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isCredentialsNonExpired(): bool
-    {
-        return true;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function isEnabled(): bool
-    {
-        return $this->active;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSalt(): ?string
-    {
-        return null;
-    }
 
     /**
      * {@inheritdoc}
@@ -309,7 +150,9 @@ class User implements AdvancedUserInterface, \Serializable
     {
         $this->plainPassword = null;
     }
-
+    public function getSalt()
+    {
+    }
     /**
      * {@inheritdoc}
      */

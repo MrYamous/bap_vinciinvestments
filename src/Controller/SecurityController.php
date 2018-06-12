@@ -68,5 +68,7 @@ class SecurityController extends Controller
             'loginForm' => $loginForm->createView(),
             'bodyClass' => 'login',
         ));
+
+
     }
 }

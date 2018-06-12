@@ -4,7 +4,7 @@
     Login
 {% endblock %}
 
-{% block body %}
+{% block content %}
     {% if error %}
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>FATAL ERROR!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}

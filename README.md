@@ -1,7 +1,5 @@
 # bap_vinciinvestments
 
-Ajout de la TODO soon
-
 ## Installation
 
 ```bash
