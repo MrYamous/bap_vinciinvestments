@@ -3,107 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}Tryhard{% endblock %}</title>
+    <title>{% block title %}Vinci Investments{% endblock %}</title>
     {% block stylesheets %}
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+        <link href="{{ asset('build/css/app.css') }}" rel="stylesheet">
     {% endblock %}
 </head>
-<body{% if bodyClass is defined %} class="{{ bodyClass }}"{% endif %}>
 {% block main %}
+    <body>
     <header>
         {% block header %}
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark"
-                 style="margin-bottom: 0px;border-radius: 0;">
-                <a class="navbar-brand" href="http://localhost/twig/index.php?p=home"><img id="logo"
-                                                                                           src="{{ asset('img/LOGO.png') }}"/>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ path('homepage') }}">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('service') }}">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('team') }}">Équipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('contact') }}">Contact</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="{{ path('blog') }}">Blog</a>
-                        </li>
-                    </ul>
-                    <span class="glyphicon glyphicon-user" aria-hidden="true" style="font-size:3em;color: white"></span>
-                </div>
-            </nav>
-        {% endblock %}
-    </header>
-    <body>
-
-    <div id="topcontent">
-        {% block topcontent %}
-            <div id="backgroundpicture" class="header-parallax">
-                <div class="containerofmaintext">
-                    <div class="main_text">
-                        <h1 style='font-family: "Arial Black", sans-serif; color:white; font-size: 5.5em;'>{% block maintext %}{% endblock %}</h1>
-                    </div>
-                </div>
-                <div class="row navpartenaires">
-                    <div class="col "><img class="img-partenaire" id="one" src="{{ asset('img/iim.png') }}" alt=""/></div>
-                    <div class="col hidden-xs "><img class="img-partenaire" id="two" src="{{ asset('img/emlv.png') }}" alt=""/>
-                    </div>
-                    <div class="col hidden-xs "><img class="img-partenaire" id="three" src="{{ asset('img/esilv.png') }}"
-                                                     alt=""/></div>
-                    <div class="col hidden-xs "><img class="img-partenaire" id="four"
-                                                     src="{{ asset('img/devinci-partners.png') }}" alt=""/></div>
-                    <div class="col hidden-xs   "><img class="img-partenaire" id="five"
-                                                       src="{{ asset('img/leonard-de-vinci.png') }}" alt=""/></div>
-                    <div class="col hidden-xs hidden-md hidden-sm   "><img class="img-partenaire" id="six"
-                                                                           src="{{ asset('img/tedx.png') }}" alt=""/></div>
-                    <div class="col hidden-xs hidden-md hidden-sm  "><img class="img-partenaire" id="seven"
-                                                                          src="{{ asset('img/pole-leonard-de-vinci.png') }}"
-                                                                          alt=""/></div>
-                    <div class="col hidden-xs hidden-md hidden-sm  "><img class="img-partenaire" id="eight"
-                                                                          src="{{ asset('img/poletech.png') }}" alt=""/></div>
-                </div>
+            <div class="main-nav">
+                <a href="{{ path('homepage') }}"><img class="logo-nav" src="{{ asset('img/LOGO.png') }}"
+                                                      height="55px"/></a>
+                <a href="{{ path('homepage') }}" class="first-link">Accueil</a>
+                <a href="{{ path('service') }}">Services</a>
+                <a href="{{ path('team') }}">Équipe</a>
+                <a href="{{ path('contact') }}">Contact</a>
+                <a href="{{ path('blog') }}">Blog</a>
             </div>
         {% endblock %}
-    </div>
+    </header>
+
+        <div class="top-container">
+            {% block topcontent %}
+            <h1>Vinci Investments</h1>
+            {% endblock %}
+            <div class="inside-top-container">
+                <div class="inside-top-icon"><img src="{{ asset('img/iim.png') }}" alt="iim" height="55px"
+                                                  class="school-logo"></div>
+                <div class="inside-top-icon"><img src="{{ asset('img/emlv.png') }}" alt="emlv" height="55px"
+                                                  class="school-logo"></div>
+                <div class="inside-top-icon"><img src="{{ asset('img/esilv.png') }}" alt="esilv" height="55px"
+                                                  class="school-logo"></div>
+                <div class="inside-top-icon"><img src="{{ asset('img/devinci-partners.png') }}" alt="dvp" height="80px">
+                </div>
+                <div class="inside-top-icon"><img src="{{ asset('img/leonard-de-vinci.png') }}" alt="ldv" height="80px">
+                </div>
+                <div class="inside-top-icon"><img src="{{ asset('img/tedx.png') }}" alt="tedx" height="50px"
+                                                  class="ted-logo"></div>
+                <div class="inside-top-icon"><img src="{{ asset('img/pole-leonard-de-vinci.png') }}" alt="aldv"
+                                                  height="80px"></div>
+                <div class="inside-top-icon"><img src="{{ asset('img/poletech.png') }}" alt="poletech" height="80px">
+                </div>
+            </div>
+        </div>
+
+
     {% block content %}
     {% endblock %}
 
     {% block footer %}
-        <div id="footer">
-            <div class="row" id="footer-cont">
-                <div class="col-md-4">
-                    <a href="http://localhost/twig/index.php?p=home"><img class="d-flex footer-logo"
-                                                                          src="{{ asset('img/LOGO.png') }}"/></a>
+        <footer>
+            <div class="footer-container"><img src="{{ asset('img/LOGO.png') }}" alt="logo" height="90px"
+                                               class="logo-footer"></div>
+            <div class="footer-container-middle">
+                <div class="foot-cont-left">
+                    <img src="{{ asset('img/position.png') }}" alt="Loc" height="40px">
                 </div>
-                <div class="col-md-4">
-                    <div class="col-md-4">
-                        <a href="https://www.google.fr/maps/place/12+Avenue+L%C3%A9onard+de+Vinci,+92400+Courbevoie/@48.896134,2.2337229,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66501d272b3c5:0xa3d422deeac71c6d!8m2!3d48.8961305!4d2.2359116">
-                            <span class="glyphicon glyphicon-map-marker icons" aria-hidden="true"></span>
-                    </div>
-                    <span class="col-md-6">
-                    <p style="text-align: left">&copy; 12 avenue Léonard de Vinci</br>
-                        92400 Courbevoie</p>
-                        </a>
-                </span>
-
+                <div class="foot-cont-right">
+                    <p class="footer-center-text-top">
+                        12 avenue Léonard de Vinci
                     </p>
+                    <p class="footer-center-text-bot">
+                        92400 Courbevoie
                     </p>
                 </div>
             </div>
-        </div>
+            <div class="footer-container-right">
+                <img src="{{ asset('img/facebook.png') }}" alt="fb" height="50px" width="50px" class="footer-icon">
+                <img src="{{ asset('img/email-filled-closed-envelope.png') }}" alt="mail" height="50px" width="50px"
+                     class="footer-icon">
+            </div>
+        </footer>
     {% endblock %}
     </body>
 {% endblock %}

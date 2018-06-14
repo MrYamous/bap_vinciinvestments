@@ -1,158 +1,131 @@
 {% extends 'base.html.twig' %}
 
 {% block head %}
-    <title>Notre équipe</title>
+    {% block title %} Notre équipe{% endblock %}
     {{ parent() }}
 {% endblock %}
-{% block topcontent %}{{ parent() }}{% endblock %}
+{% block topcontent %}<h1>Notre équipe</h1>{% endblock %}
 {% block content %}
-<div id="background-contact">
-
-    <h1 class="typo-contact"> Bureau</h1>
-    <div class="container">
-
-        <div class="row">
-            <div class="col-xs-12 img-team">
-                <img src="{{ asset('img/Thomas-VAIRINHO.png') }}" class="equipe" alt="Thomas VAIRINHO président">
-                <span class="survol">TEST1</span>
+    <div class="top-team">
+        <h2>Bureau</h2>
+        <div class="pres">
+            <div class="info-role">
+                <span class="role">Président</span>
+                <img src="{{ asset('img/Thomas-VAIRINHO.png') }}" alt="" height="250px">
+                <h3>Thomas VAIRINHO</h3>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-6 col-xs-12 img-team">
-                <img src="{{ asset('img/hamdi-GABTENI.png') }}" class="equipe" alt="Hamdi GABTENI vice présidents">
-                <span>TESTTESTESTESTEST</span>
+        <div class="vice-pres">
+            <div class="info-role">
+                <span class="role">Vice-Président</span>
+                <img src="{{ asset('img/hamdi-GABTENI.png') }}" alt="" height="250px">
+                <h3>Hamdi GABTENI</h3>
             </div>
-            <div class="col-md-6 col-xs-12 img-team">
-                <img src="{{ asset('img/Mouhamed-NDOUR.png') }}" class="equipe" alt="mouhamed NDOUR vice présidents">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4 col-xs-12 img-team">
-                <img src="{{ asset('img/Celim-STARCK.png') }}" class="equipe" alt="Celim STARCK trésorier">
-            </div>
-            <div class="col-md-4 col-xs-12 img-team">
-                <img src="{{ asset('img/Aslihan-CETIN.png') }}" class="equipe" alt="Aslihan CETIN secrétaire générale">
-            </div>
-            <div class="col-md-4 col-xs-12 img-team">
-                <img src="{{ asset('img/Alexandre-CARVALHO.jpg') }}" class="equipe"
-                     alt="Alexandre CARVALHO secrétaire générale adjoint">
+            <div class="info-role">
+                <span class="role">Vice-Président</span>
+                <img src="{{ asset('img/Mouhamed-NDOUR.png') }}" alt="" height="250px">
+                <h3>Mouhamed NDOUR</h3>
             </div>
         </div>
-
+        <div class="bureau">
+            <div class="info-role">
+                <span class="role">Trésorier</span>
+                <img src="{{ asset('img/Celim-STARCK.png') }}" alt="" height="250px">
+                <h3>Célim STARCK</h3>
+            </div>
+            <div class="info-role">
+                <span class="role">Secrétaire Générale</span>
+                <img src="{{ asset('img/Aslihan-CETIN.png') }}" alt="" height="250px">
+                <h3>Aslihan CETIN</h3>
+            </div>
+            <div class="info-role">
+                <span class="role">Secrétaire Général Adjoint</span>
+                <img src="{{ asset('img/Alexandre-CARVALHO.jpg') }}" alt="" height="250px">
+                <h3>Alexandre CARVALHO</h3>
+            </div>
+        </div>
     </div>
-
-    <h2 class="typo-contact">Les pôles</h2>
-    <div class="container-fluid">
-        <div class="row" style="margin-top: 3em;">
-            <div class="col-md-10 col-xs-12 left-background-team">
-                <div class="col-md-4">
-                    <h3 class="left-typo">Recherche&<br/>Développement
-                    </h3>
+    <div class="bot-pole">
+        <h2>Les pôles</h2>
+        <div class="info-block-top">
+            <div class="search">
+                <div class="inside-search-left">
+                    Recherche & Développement
                 </div>
-
-                <div class="col-md-8 col-xs-12 typo-text-axe">
-                    <p class="left-text-content">Il a pour vocation d’utiliser le savoir accumulé durant les différentes années du
-                        cursus d’ingénieur.
-                        Ainsi, il permet de mettre en valeur, et d’accroître les connaissances en finance, en
-                        mathématiques et en informatique des étudiants. Pour cela, il propose aux étudiants
-                        de participer à des formations, hackathons (et autres compétitions), et à des projets.
-                        Projet PING : Bourse des assos : conception d’une plateforme de trading ou les étudiant
-                        du pôle pourraient acheter/vendre des actions des associations du pôle.
-                        Projet PI2 (A4) : Le machine Learning appliqué à la prévision de l’évolution des prix
-                        de produits financiers. Projet PI2 (A5) : Une plateforme d’échange de produits financiers
-                        sécurisée via Blockchain</p>
+                <div class="inside-search-right">
+                    Il a pour vocation d’utiliser le savoir accumulé durant les différentes années du cursus
+                    d’ingénieur. Ainsi, il permet de mettre en valeur, et d’accroître les connaissances en finance, en
+                    mathématiques et en informatique des étudiants. Pour cela, il propose aux étudiants de participer à
+                    des formations, hackathons (et autres compétitions), et à des projets.Projet PING : Bourse des assos
+                    : conception d’une plateforme de trading ou les étu-diant du pôle pourraient acheter/vendre des
+                    actions des associations du pôle. Projet PI2 (A4) : Le machine Learning appliqué à la prévision de
+                    l’évolution des prix de produits financiers. Projet PI2 (A5) : Une plateforme d’échange de produits
+                    finan-ciers sécurisée via Blockchain
                 </div>
             </div>
         </div>
-        <div class="row right-row-content" style="margin-top: 3em;">
-            <div class="col-md-10 col-xs-12 right-background-team">
-                <div class="col-md-8 asset">
-                    <p class="right-text-content">Développement de stratégies d’investisement sur les marchés financiers et optimisation
-                        du portefeuille de l’association.
-                        Actuellement, nous terminons de rédiger notre stratégie d'investissement. Il s'agit
-                        d'un document qui expliquera en details la structure de notre portefeuille. Nous avons
-                        4 équipes dont 3 qui travaillent sur des classes d'actifs différentes (equity, fixed
-                        income et crypto monnaies) et 1 équipe en charge de la création d'une interface de
-                        suivi de notre portefeuille.</p>
+        <div class="info-block-mid">
+            <div class="management">
+                <div class="inside-mana-left">
+                    Développement de stratégies d’investisement sur les marchés financiers et optimisa-tion du
+                    portefeuille de l’association.Actuellement, nous terminons de rédiger notre stratégie
+                    d'investissement. Il s'agit d'un document qui expliquera en details la structure de notre
+                    portefeuille. Nous avons 4 équipes dont 3 qui travaillent sur des classes d'actifs différentes
+                    (equity, fixed income et crypto monnaies) et 1 équipe en charge de la création d'une interface de
+                    suivi de notre portefeuille.
                 </div>
-
-                <div class="col-md-4">
-                    <h3 class="right-typo">Asset<br/>Management
-                    </h3>
+                <div class="inside-mana-right">
+                    Asset Management
                 </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-between" style="margin-top: 3em;">
-            <div class="col-md-5 left-container">
-                <div class="col-md-4">
-                    <h3 class="left-typo">Network</h3>
+        <div class="info-block-bot">
+            <div class="netevent">
+                <div class="inside-net-left">
+                    Network
                 </div>
-                <div class="col-md-8">
-                    <p class="left-text-content">
-                        Négociation de partenariats, démarchage
-                        de mécénats et subventions. Création et
-                        animation du réseau Alumni et développement
-                        du réseau professionnel de VI. Il permettra
-                        aux membres de VI de bénéficier
-                        d’offres de stages de qualité grâce à notre
-                        réseau des anciens.
-                    </p>
+                <div class="inside-net-right">
+                    Négociation de partenariats, démarchage de mécénats et subventions. Création et animation du réseau
+                    Alumni et développe-ment du réseau professionnel de VI. Il per-mettra aux membres de VI de
+                    bénéficier d’offres de stages de qualité grâce à notre réseau des anciens.
                 </div>
             </div>
-            <div class="col-md-5 right-container">
-                <div class="col-md-8">
-                    <p class="right-text-content">
-                        Gestion de l'organisation de tous les
-                        événements de l'association au sein du
-                        pôle Léonard de Vinci et à l'extérieur.
-                    </p>
+            <div class="netevent">
+                <div class="inside-event-left">
+                    Gestion de l'organisation de tous les événements de l'association au sein du pôle Léonard de Vinci
+                    et à l'extérieur.
                 </div>
-                <div class="col-md-4">
-                    <h3 class="right-typo">Event</h3>
+                <div class="inside-event-right">
+                    Event
                 </div>
             </div>
         </div>
-
-        <div class="row d-flex justify-content-between" style="margin-top: 3em;">
-            <div class="col-md-5 left-container">
-                <div class="col-md-4">
-                    <h3 class="left-typo">Financial Advisory</h3>
+        <div class="info-block-bot">
+            <div class="netevent">
+                <div class="inside-finance-left">
+                    Financial Advisory
                 </div>
-                <div class="col-md-8">
-                    <p class="left-text-content">
-                        Formation de nos membres à la
-                        finance d’entreprise afin qu’ils
-                        deviennent de véritables conseillers
-                        financiers et proposition de
-                        nos services de conseillers financiers
-                        aux Start-up et PME.
-                    </p>
+                <div class="inside-finance-right">
+                    Formation de nos membres à la finance d’entreprise afin qu’ils deviennent de véritables conseil-lers
+                    financiers et proposition de nos services de conseillers finan-ciers aux Start-up et PME.
+
                 </div>
             </div>
-            <div class="col-md-5 right-container">
-                <div class="col-md-8">
-                    <p class="right-text-content">
-                        Diffuser, faire
-                        connaître, faire aimer
-                        et valoriser les différents
-                        outils et services
-                        proposés par Vinci Investments
-                        et ses partenaires.
-                    </p>
+            <div class="netevent">
+                <div class="inside-com-left">
+                    Diffuser, faire connaître, faire aimer et valoriser les diffé-rents outils et services proposés par
+                    Vinci In-vestments et ses partenaires.
                 </div>
-                <div class="col-md-4">
-                    <h3 class="right-typo">Communication</h3>
+                <div class="inside-com-right">
+                    Communication
                 </div>
             </div>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
 
 
-    {% block maintext %}Notre équipe{% endblock %}
 
     {% block footer %}
-    {{ parent() }}
-{% endblock %}
+        {{ parent() }}
+    {% endblock %}

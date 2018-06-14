@@ -1,28 +1,39 @@
 {% extends 'base.html.twig' %}
-
+{% block topcontent %}<h1>Blog</h1>{% endblock %}
 {% block content %}
-    <h1> Articles</h1>
+    <div class="blog-container">
+        {% for article in articles %}
 
-    {% for article in articles %}
-
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                    <h5 class="card-header">{{ article.title }}</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ article.excerpt }}</h5>
-                        {% if article.youtube is defined and article.youtube != '' %}
-                            <iframe width="560" height="315" src="{{ article.youtube }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        {% endif %}
-                        <p class="card-text">{{ article.content|raw }}</p>
-                        <a href="{{ path('article', {'slug': article.slug}) }}" class="btn btn-primary">Voir</a>
+            <div class="article-container">
+                <div class="title-info">
+                    <div class="article-date">
+                        <span class="day-span">{{ article.createdAt | date ('d') }}</span>
+                        <p class="monthyear-span">{{ article.createdAt | date ('m/Y') }}</p>
+                    </div>
+                    <div class="article-title">
+                        {{ article.title }}
                     </div>
                 </div>
+                <hr>
+                <div class="article-excerpt">
+                    {{ article.excerpt }}
+                </div>
+                <a href="{{ path('article', {'slug': article.slug}) }}" class="article-button">Lire la suite</a>
             </div>
-        </div>
 
 
-    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+        {% endfor %}
+    </div>
 {% endblock %}
 
 {% block title %}

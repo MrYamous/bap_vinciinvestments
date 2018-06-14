@@ -1,98 +1,98 @@
 {% extends 'base.html.twig' %}
 
 {% block head %}
-    <title>Accueil</title>
     {{ parent() }}
+    {% block title %} Accueil{% endblock %}
 {% endblock %}
 {% block topcontent %}
     {{ parent() }}
 {% endblock %}
 {% block content %}
-    <div class="container-fluid background-homepage">
-        <h1 id="homepage-title">Qui sommes-nous ?</h1>
-        <div class="container" style="padding-bottom: 4em;display: flex;justify-content: space-around;margin: auto;">
-            <div class="row d-flex justify-content-between">
-                <span><h3 class="abilities"><strong>• Dépassement de soi</strong></h3></span>
-                <span><h3 class="abilities"><strong>• Rigueur</strong></h3></span>
-                <span><h3 class="abilities"><strong>• Esprit d’équipe</strong></h3></span>
+    <div class="top-hp-container">
+        <h2>Qui sommes nous ?</h2>
+        <div class="inside-top-hp">
+            <div class="top-point">
+                <ul class="ul-point">
+                    <li class="li-point">Rigueur</li>
+                    <li class="li-point">Dépassement de soi</li>
+                    <li class="li-point">Esprit d'équipe</li>
+                </ul>
             </div>
-        </div>
-
-
-        <section class="row">
-            <div class="col-md-4" style="float: left; padding-left: 0;">
-                <div id="triangle">
-                    <p class="maintext">
-                        Juin 2017<br/>
-                        80 membres<br/>
-                        3 écoles<br/>
-                    </p>
+            <div class="mid-text">
+                <div class="left-inside-top-hp">
+                    <div class="point-info-container">
+                        <div class="point-info">- Juin 2017</div>
+                        <div class="point-info">- 80 membres</div>
+                        <div class="point-info">- 3 écoles</div>
+                    </div>
+                </div>
+                <div class="right-inside-top-hp">
+                    <div class="top-hp-left-content">
+                        Son objectif principal est de faire découvrir la finance aux étudiants. Nous leur per-mettons
+                        ainsi, à travers des formations, de passer de la théorie à la pratique dans un environnement qui
+                        se rapproche le plus possible des banques d’affaires.Chez Vinci Investments, nous défendons une
+                        identité forte par le partage de valeurs communes : la rigueur dans le travail, l’esprit
+                        d’équipe et le dépassement de soi.
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <p class="justify-text">
-                    Son objectif principal est de faire découvrir la finance aux étudiants. Nous leur permettons
-                    ainsi, à travers des formations, de passer de la théorie à la pratique dans
-                    un environnement qui se rapproche le plus possible des banques d’affaires.
-                    Chez Vinci Investments, nous défendons une identité forte par le partage de valeurs
-                    communes : la rigueur dans le travail, l’esprit d’équipe et le dépassement de soi.
-                </p>
-            </div>
-        </section>
+        </div>
+        <div class="inside-bot-hp">
+            <div class="side-blocks"></div>
+            <div class="img-block"></div>
+            <div class="side-blocks"></div>
+        </div>
     </div>
-    <div id="trait" style="background-color: #666666">
-        <img src="{{ asset('img/membres-vinci-investments.jpg') }}" class="img-fluid team" alt="responsive image"/>
-    </div>
-    <h1 style="text-align: center">Nos atouts</h1>
+    <div class="bot-hp-container">
+        <div class="bg-bot">
+            <h2>Nos atouts</h2>
+            <div class="school-info">
+                <div class="esilv-container">
+                    <img src="{{ asset('img/logo-esilv.png') }}" alt="esilv" height="140px" width="140px">
+                    <div class="numbers">
+                        4600
+                        <div class="span-p">étudiants</div>
+                    </div>
 
-    <div class="row">
-        <div class="nos-ecoles">
-            <div class="col col-md-4 col-sm-12">
-                <img class="logo-pulv" src="{{ asset('img/logo-esilv.png') }}"/>
-                <p class="references">
-                <p class="references-main"><strong>4600</strong></p>
-                étudiants
-                </p>
+                </div>
+                <div class="iim-container">
+                    <img src="{{ asset('img/logo-iim.png') }}" alt="iim" height="140px" width="140px">
+                    <div class="numbers">
+                        3
+                        <div class="span-p">écoles</div>
+                    </div>
+
+                </div>
+                <div class="emlv-container">
+                    <img src="{{ asset('img/logo-emlv.png') }}" alt="emlv" height="140px" width="140px">
+                    <div class="numbers">
+                        92400
+                        <div class="span-p">La Défense</div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col col-md-4 col-sm-12">
-                <img class="logo-pulv" src="{{ asset('img/logo-iim.png') }}"/>
-                <p class="references">
-                    <strong>3</strong></br>
-                <p class="references-main">Écoles</p>
-                </p>
-            </div>
-            <div class="col col-md-4 col-sm-12">
-                <img class="logo-pulv" src="{{ asset('img/logo-emlv.png') }}"/>
-                <p class="references">
-                    <strong>92400</strong></br>
-                <p class="references-main">La Défense</p>
-                </p>
+            <div class="perks-container">
+                <div class="left-perk">
+                    <ul class="left-descr">
+                        <li>Profils variés</li>
+                        <li>Points de vues différents</li>
+                        <li>Compétences multiples</li>
+                    </ul>
+                </div>
+                <div class="right-perk">
+                    <article class="perk-descr">Vinci Investments regroupe des étudiants de l’ESILV (Ecole Supé-rieure
+                        d’Ingénieurs Léonard de
+                        Vinci), de l’EMLV (Ecole de Manage-ment Léonard de Vinci) et de l’IIM (Institut de l’Internet et
+                        du Multimé-dia). Cela permet de travailler avec des profils variés et des points de vus
+                        différents du monde de la finance, panel de compétences large.
+                    </article>
+                </div>
             </div>
         </div>
     </div>
-    <section class="row">
-        <div class="col-md-2" style="background-color: red;float: left;margin: 10px">
-            <p id="skills">
-                • Profils variés<br/>
-                • Points de vus différents<br/>
-                • Compétences multiples<br/>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <p class="justify-text">
-                Vinci Investments regroupe des étudiants de l’ESILV (Ecole Supérieure
-                d’Ingénieurs Léonard de Vinci), de l’EMLV (Ecole de Management
-                Léonard de Vinci) et de l’IIM (Institut de l’Internet et du Multimédia).
-                Cela permet de travailler avec des profils variés et des points de
-                vus différents du monde de la finance, panel de compétences large.
-            </p>
-        </div>
-
-    </section>
-
 {% endblock %}
 
-    {% block maintext %}Vinci Investments{% endblock %}
 
 
     {% block footer %}

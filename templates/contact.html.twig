@@ -1,73 +1,50 @@
 {% extends 'base.html.twig' %}
 
 {% block head %}
-    <title>Nous contacter</title>
+    {% block title %} Nous contacter{% endblock %}
     {{ parent() }}
 {% endblock %}
-{% block topcontent %}{{ parent() }}{% endblock %}
+{% block topcontent %}<h1>Contactez nous</h1>{% endblock %}
 {% block content %}
-    <div id="homepage-background">
-        <h2 class="contact-typo">Nous trouver</h2>
-        <div class="container">
-            <div class="col-md-6 col-xs-12 d-inline-flex p-2 partdecol">
-                <a href="mailto:vinciinvestments@gmail.com"><span class="glyphicon glyphicon-envelope icons" aria-hidden="true">
-                    <p class="contact-info-typo">vinciinvestments@gmail.com</p>
-            </div>
-            <div class="col-md-6 col-xs-12 d-inline-flex p-2 partdecol">
-                <a href="https://www.google.fr/maps/place/12+Avenue+L%C3%A9onard+de+Vinci,+92400+Courbevoie/@48.896134,2.2337229,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66501d272b3c5:0xa3d422deeac71c6d!8m2!3d48.8961305!4d2.2359116">
-                    <span class="glyphicon glyphicon-map-marker icons" aria-hidden="true">
-                    <p class="contact-info-typo"> 12 avenue Leonard de Vinci, Courbevoie</p></a>
+    <h2>Nous trouver</h2>
+    <div class="find-container">
+        <div class="adress-block">
+            <div class="adress-icon">
+                <img src="{{ asset('img/email-filled-closed-envelope.png') }}" alt="mail" height="65px">
+                <div class="adress-content">
+                    vinciinvestments@gmail.com
+                </div>
             </div>
         </div>
-        <h2 class="contact-typo">Nous contacter</h2>
-        <div>
-            <form id="myForm">
-                <div class="container contact-cont">
-                    <div class="col-md-6 left-side-contact">
-                        <div class="form-horizontal" role="form">
-                            <div class="form-group">
-
-                                <div class="col-sm-12">
-                                    <input type="text" class="forme" id="nom" placeholder="VOTRE NOM"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="forme" id="email" placeholder="VOTRE EMAIL"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input type="text" class="forme" id="Sujet " placeholder="SUJET"/>
-                                </div>
-                            </div>
-
-                        </div>
+        <div class="adress-block">
+            <div class="adress-icon">
+                <img src="{{ asset('img/position.png') }}" alt="pos" height="65px">
+                <div class="adress-content">
+                    12 avenue Léonard de Vinci Courbevoie
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Nous contacter</h2>
+    <div class="contact-container">
+        <div class="contact-form">
+            <form action="" class="form-container">
+                <div class="global-form">
+                    <div class="left-form">
+                        <input type="text" name="name" placeholder="VOTRE NOM">
+                        <input type="text" name="email" placeholder="VOTRE EMAIL">
+                        <input type="text" name="subject" placeholder="SUJET">
                     </div>
-                    <div class="col-md-6 right-side-contact">
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <textarea class="subject" id="message" placeholder="VOTRE MESSAGE"></textarea>
-                            </div>
-                        </div>
+                    <div class="right-form">
+                        <textarea name="message" cols="30" rows="10" placeholder="VOTRE MESSAGE"></textarea>
                     </div>
                 </div>
-                <div class="col-md-12" style="vertical-align: bottom">
-                    <div class="button-send">
-                        <input class="btn btn-success btn-send disabled" type="submit" value="Envoyer"
-                               onClick="submit();">
-                    </div>
+                <div class="submit-button">
+                    <input type="submit" value="ENVOYER" class="button">
                 </div>
             </form>
         </div>
     </div>
-    <!-- script permettant à l'utilisateur de ne pas utiliser entrée pour envoyer le formulaire -->
-    <script type="text/javascript">
-        myForm.addEventListener("keydown", function (e) {
-            if (e.keyCode == 13) e.preventDefault()
-        });
-    </script>
-
 {% endblock %}
 
 

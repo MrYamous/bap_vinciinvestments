@@ -1,11 +1,98 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <h1> Mon Contenu</h1>
+{% block head %}
+    <title>Notre équipe</title>
+    {{ parent() }}
+{% endblock %}
+{% block topcontent %}{{ parent() }}{% endblock %}
+{% block content %}
+    <div class="homepage-background">
+        <h2 id="services-title">
+            Que faisons-nous ?</h2>
+        <div class="row" id="services-row">
+            <div class="col-md-3 services-typo ">
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat
+                </p>
+            </div>
+            <div class="col-md-3 services-typo ">
+                <p>Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla
+                    pariatur. Excepteur sint occaecat
+                </p>
+            </div>
+        </div>
+        <div class="triangle" style="border-left: 300px solid #666666">
+            <h3>ENTREPRISES</h3>
+        </div>
+        <div class="container">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 services-paragraphe">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                </p>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-6 services-paragraphe">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                </p>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-6 services-paragraphe">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                </p>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-right: 0;">
+            <div class="triangle-reverse">
 
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
-{% block title %}
-    Services
-{% endblock %}
 
+
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
+
+
+
+        {% block title %}
+            Services
+        {% endblock %}

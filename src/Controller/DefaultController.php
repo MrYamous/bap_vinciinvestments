@@ -95,6 +95,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getRepository(Article::class);
         $articles = $repo->findOneBy(array('slug' => $slug));
+
         $com = $em->getRepository(Comment::class);
         $comments = $com->findAll();
 

@@ -1,31 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1> Mon Contenu</h1>
 
-    <div class="row">
-        <div class="col">
-            <div class="card" style="width: 18rem; margin-bottom: 20px;">
-                <h5 class="card-header">{{ article.title }}</h5>
-                <div class="card-body">
-                    <p class="card-text">{{ article.content }}</p>
 
-                </div>
+    <div class="slug-article-container">
+        <div class="article-main">
+            <div class="main-title">
+                {{ article.title }}
             </div>
-            <div class="container">
-
-                {{ form_start(commentForm) }}
-                {{ form_widget(commentForm) }}
-                {{ form_end(commentForm) }}
-
-
-                    <div class="card" style="width: 18rem; margin-bottom: 20px;">
-
-                    </div>
-
+            <div class="article-yt">
+                {% if article.youtube is defined and article.youtube != '' %}
+                    <iframe width="560" height="315" src="{{ article.youtube }}" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                {% endif %}
+            </div>
+            <div class="main-content">
+                {{ article.content|raw }}
             </div>
         </div>
     </div>
+
 
 {% endblock %}
 
