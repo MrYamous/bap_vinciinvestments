@@ -21,7 +21,7 @@ easy_admin:
                 title: 'Modifier le contenu'
                 fields:
                     - { property: 'title', label: 'Titre' }
-                    - { property: 'slug', label: 'Limace' }
+                    - { property: 'slug', label: 'URL Personnalisé' }
                     - { property: 'youtube', label: 'Youtube URL', type: 'text' }
                     - { property: 'content', label: 'Contenu', css_class: 'ckeditor', type: 'textarea' }
                     - { property: 'excerpt', label: 'Résumé', type: 'text' }
