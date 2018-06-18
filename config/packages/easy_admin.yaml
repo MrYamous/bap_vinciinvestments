@@ -9,24 +9,6 @@ easy_admin:
                     - '/assets/admin/admin.js'
     entities:
         # List the entity class name you want to manage
-        User:
-            class: App\Entity\User
-            label: 'Utilisateurs'
-            list:
-                title: "Liste des administrateurs"
-                fields:
-                    - { property: 'username', label: 'Nom' }
-                    - { property: 'email', label: 'E-mail' }
-            form:
-                title: 'Modifier le compte'
-                fields:
-                    - { property: 'username', label: 'Nom' }
-                    - { property: 'email', type: 'email', label: 'E-mail' }
-                    - { property: 'plainPassword', type: 'password', label: 'Mot de passe' }
-                    - { property: 'isActive', type: 'checkbox', label: 'Active ?' }
-            new:
-                fields:
-                    - { property: 'plainPassword', type_options: { required: true }}
         Article:
             class: App\Entity\Article
             label: 'Articles'
@@ -45,4 +27,52 @@ easy_admin:
                     - { property: 'excerpt', label: 'Résumé', type: 'text' }
                     - { property: 'createdAt', label: 'Date de création' }
                     - { property: 'updatedAt', label: 'Dernière mise à jour' }
+        User:
+            class: App\Entity\User
+            label: 'Utilisateurs'
+            list:
+                title: "Liste des administrateurs"
+                fields:
+                    - { property: 'username', label: 'Nom' }
+                    - { property: 'email', label: 'E-mail' }
+            form:
+                title: 'Modifier le compte'
+                fields:
+                    - { property: 'username', label: 'Nom' }
+                    - { property: 'email', type: 'email', label: 'E-mail' }
+                    - { property: 'plainPassword', type: 'password', label: 'Mot de passe' }
+                    - { property: 'isActive', type: 'checkbox', label: 'Active ?' }
+            new:
+                fields:
+                    - { property: 'plainPassword', type_options: { required: true }}
+        Comment:
+            class: App\Entity\Comment
+            label: 'Commentaires'
+            list:
+                title: "Commentaires publiés"
+                fields:
+                    - { property: 'created', label: 'Date de publication' }
+                    - { property: 'content', label: 'Contenu'}
+            form:
+                title: 'Modifier un commentaire'
+                fields:
+                    - { property: 'content', label: 'Contenu', type: 'textarea'}
+
+        Contact:
+            class: App\Entity\Contact
+            label: 'Messages reçus'
+            list:
+                title: 'Messages reçus'
+                fields:
+                    - { property: 'created', label: 'Date de réception' }
+                    - { property: 'email', label: 'E-mail du contact' }
+                    - { property: 'subject', label: 'Sujet du message'}
+                    - { property: 'message', label: 'Contenu du message' }
+            form:
+                title: 'Détails des messages'
+                fields:
+                    - { property: 'email', label: 'E-mail du contact' }
+                    - { property: 'subject', label: 'Sujet du message'}
+                    - { property: 'message', label: 'Contenu du message', type: 'textarea' }
+
 

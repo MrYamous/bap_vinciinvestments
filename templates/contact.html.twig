@@ -28,21 +28,21 @@
     <h2>Nous contacter</h2>
     <div class="contact-container">
         <div class="contact-form">
-            <form action="" class="form-container">
+            {{ form_start(contactForm) }}
                 <div class="global-form">
                     <div class="left-form">
-                        <input type="text" name="name" placeholder="VOTRE NOM">
-                        <input type="text" name="email" placeholder="VOTRE EMAIL">
-                        <input type="text" name="subject" placeholder="SUJET">
+                        {{ form_row(contactForm.name) }}
+                        {{ form_row(contactForm.email) }}
+                        {{ form_row(contactForm.subject) }}
                     </div>
                     <div class="right-form">
-                        <textarea name="message" cols="30" rows="10" placeholder="VOTRE MESSAGE"></textarea>
+                        {{ form_row(contactForm.message) }}
                     </div>
                 </div>
                 <div class="submit-button">
                     <input type="submit" value="ENVOYER" class="button">
                 </div>
-            </form>
+            {{ form_end(contactForm) }}
         </div>
     </div>
 {% endblock %}

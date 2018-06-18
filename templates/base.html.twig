@@ -73,9 +73,10 @@
                 </div>
             </div>
             <div class="footer-container-right">
-                <img src="{{ asset('img/facebook.png') }}" alt="fb" height="50px" width="50px" class="footer-icon">
-                <img src="{{ asset('img/email-filled-closed-envelope.png') }}" alt="mail" height="50px" width="50px"
-                     class="footer-icon">
+                <a href="https://www.facebook.com/VinciInvestments/"><img src="{{ asset('img/facebook.png') }}" alt="fb" height="50px" width="50px" class="footer-icon">
+                <a href="https://twitter.com/Vinci_Invests?lang=fr"><img src="{{ asset('img/twitter.png') }}" alt="fb" height="50px" width="50px" class="footer-icon">
+                <a href="{{ path('contact') }}"><img src="{{ asset('img/email-filled-closed-envelope.png') }}" alt="mail" height="50px" width="50px"
+                     class="footer-icon"></a>
             </div>
         </footer>
     {% endblock %}

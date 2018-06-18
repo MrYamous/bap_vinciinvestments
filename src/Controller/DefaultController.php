@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Entity\Contact;
+use App\Form\ContactFormType;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -22,6 +24,7 @@ class DefaultController extends Controller
             'home' => 'home',
         ]);
     }
+
     /**
      * @Route("/blog", name="blog")
      */
@@ -37,6 +40,7 @@ class DefaultController extends Controller
             'articles' => $articles,
         ]);
     }
+
     /**
      * @Route("/service", name="service")
      */
@@ -47,20 +51,46 @@ class DefaultController extends Controller
             'service' => 'services',
         ]);
     }
+
     /**
      * @Route("/contact", name="contact")
+     * @param $request
+     * @return Response
      */
-    public function contact()
+    public function contact(Request $request)
     {
+        $contact = new Contact();
 
+        $contactForm = $this->createForm(ContactFormType::class);
+        $contactForm->handleRequest($request);
+
+        if ($contactForm->isSubmitted() && $contactForm->isValid()) {
+            $name = $contactForm['name']->getData();
+            $email = $contactForm['email']->getData();
+            $subject = $contactForm['subject']->getData();
+            $message = $contactForm['message']->getData();
+
+            $contact->setName($name);
+            $contact->setEmail($email);
+            $contact->setSubject($subject);
+            $contact->setMessage($message);
+
+            $m = $this->getDoctrine()->getManager();
+            $m->persist($contact);
+            $m->flush();
+
+            return $this->redirectToRoute('contact');
+        }
         return $this->render('contact.html.twig', [
-            'contact' => 'Contact',
+            'contactForm' => $contactForm->createView(),
         ]);
     }
+
     /**
      * @Route("/team", name="team")
      */
-    public function team()
+    public
+    function team()
     {
 
         return $this->render('team.html.twig', [
@@ -76,11 +106,15 @@ class DefaultController extends Controller
      */
     public function article(Request $request, $slug)
     {
+        $comment = new Comment();
+
         $commentForm = $this->createForm(CommentFormType::class);
         $commentForm->handleRequest($request);
 
         if ($commentForm->isSubmitted() && $commentForm->isValid()) {
-            $comment = $commentForm->getData();
+            $message = $commentForm['content']->getData();
+
+            $comment->setContent($message);
 
             // ... perform some action, such as saving the task to the database
             // for example, if Task is a Doctrine entity, save it!
@@ -88,7 +122,7 @@ class DefaultController extends Controller
             $em->persist($comment);
             $em->flush();
 
-
+            return $this->redirectToRoute('blog');
 
         }
 
@@ -98,7 +132,6 @@ class DefaultController extends Controller
 
         $com = $em->getRepository(Comment::class);
         $comments = $com->findAll();
-
 
 
         return $this->render('show.html.twig', [

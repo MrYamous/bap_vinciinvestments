@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\CommentRepository")
  * @ORM\Table(name="comment")
  * @ORM\HasLifecycleCallbacks
  */
@@ -61,26 +61,6 @@ class Comment
         $this->content = $content;
     }
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $article_slug;
-
-    /**
-     * @return mixed
-     */
-    public function getArticleSlug(): ? string
-    {
-        return $this->article_slug;
-    }
-
-    /**
-     * @param mixed $article_slug
-     */
-    public function setArticleSlug($article_slug)
-    {
-        $this->article_slug = $article_slug;
-    }
 
     public function getId(){
         return $this->id;

@@ -17,7 +17,22 @@
             <div class="main-content">
                 {{ article.content|raw }}
             </div>
+
         </div>
+        {{ form_start(commentForm) }}
+        {{ form_row(commentForm.content) }}
+        {{ form_end(commentForm) }}
+
+        {% for comment in comments %}
+            <div class="comment-container">
+                <div class="comment-block">
+                    <p class="comment-section">
+                    {{ comment.content }}
+                    </p>
+                    <h4>Commentaire publié le : {{ comment.created | date ('d/m/Y') }}</h4>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
 

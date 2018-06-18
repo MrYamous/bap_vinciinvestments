@@ -97,6 +97,7 @@ h1
 // Bottom Content of Website
 footer
 {
+  margin-top: 50px;
   border-top: solid $lightgrey;
   height: 260px;
   width: 100%;
@@ -631,6 +632,11 @@ h3
   justify-content: flex-end;
 }
 // Contact Style
+.contactText
+{
+  height: 320px;
+  width: 450px;
+}
 .find-container
 {
   width: 100%;
@@ -666,9 +672,9 @@ h3
 }
 .contact-container
 {
-  width: 100%;
+  width: 80%;
   height: 650px;
-  margin-bottom: 80px;
+  margin:auto;
 }
 .contact-form
 {
@@ -902,7 +908,6 @@ hr
   align-items: flex-start;
   justify-content: center;
   color: white;
-  font-weight: bold;
   font-size: 18px;
 }
 .empty
@@ -910,60 +915,159 @@ hr
   height: 20px;
   width: 100%;
 }
+label
+{
+  color: $yellow;
+  font-weight: bold;
+  font-size: 22px;
+}
+.commentText
+{
+  width: 560px;
+  height: 200px;
+}
+.comment-container
+{
+  width: 560px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.comment-block
+{
+  width: 560px;
+  margin-top: 20px;
+  border-bottom: solid 3px white;
+}
+h4
+{
+  color: $yellow;
+  font-size: 14px;
+  font-weight: bold;
+}
+.comment-section
+{
+  color:white;
+  font-size: 16px;
+
+}
 // service style
-.main-service
+.main-services
 {
   width: 100%;
-  height: 2000px;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
+  height: 2200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .top-service
 {
   width: 80%;
-  height:300px;
-  display: flex;
+  margin:auto;
+  height: 400px;
+  display:flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
 }
+.inside-services
+{
+  width: 35%;
+  height: 400px;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-align: justify;
+}
+.top-separation
+{
+  height: 400px;
+  width: 40%;
+  -webkit-clip-path: polygon(0% 0%, 0 100%, 85% 50%);
+  clip-path: polygon(0% 0%, 0 100%, 85% 50%);
+  background-color: $grey;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inside-sepa-top
+{
+  position: absolute;
+  height: 60px;
+  width: 70%;
+  color: $yellow;
+  font-weight: bold;
+  font-size: 35px;
+
+}
+.mid-service
+{
+  height: 600px;
+  width: 50%;
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
 .service-content
 {
-  background-color: blue;
-  width: 30%;
-  height: 300px;
-}
-.entreprises
-{
-
-}
-#services-title {
-  margin-top: 0;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 18px;
   color: white;
-  text-align: center;
-  padding-top: 2em;
-  padding-bottom: 1.5em;
-  font-family: 'Arial Black', sans-serif;
 }
-
-#services-row {
+.bot-separation
+{
+  height: 400px;
+  width: 40%;
+  -webkit-clip-path: polygon(15% 50%, 100% 100%, 100% 0);
+  clip-path: polygon(15% 50%, 100% 100%, 100% 0);
+  background-color: $grey;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  margin-top: 800px;
+  right: 0;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.inside-sepa-bot
+{
+  position: absolute;
+  height: 60px;
+  width: 10%;
+  color: $yellow;
+  font-weight: bold;
+  font-size: 35px;
+}
+.bot-service
+{
+  height: 600px;
+  width: 50%;
+  position: absolute;
+  margin-top: 1000px;
+  margin-left: 10%;
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
   justify-content: space-between;
 }
-
-.services-typo {
-  color: white;
-  font-size: 15px;
-  text-align: justify;
-}
-
-.services-paragraphe {
-  color: white;
-  font-size: 15px;
-  text-align: justify;
-  padding-bottom: 4em;
+// Login
+.login-container
+{
+  width: 60%;
+  margin-left: 25%;
 }
